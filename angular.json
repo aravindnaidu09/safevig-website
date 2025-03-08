@@ -100,6 +100,21 @@
             ],
             "scripts": []
           }
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "browserTarget": "your-project-name:build:production",
+            "routes": [
+              "/",
+              "/about",
+              "/contact",
+              "/services",
+              "/careers",
+              "/products",
+              "/privacy-policy"
+            ]
+          }
         }
       }
     }
