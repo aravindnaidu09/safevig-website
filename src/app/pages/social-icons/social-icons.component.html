@@ -1,0 +1,13 @@
+<div class="social-icons">
+    <a
+      *ngFor="let social of socialLinks"
+      [href]="social.link"
+      target="_blank"
+      class="icon"
+      [attr.data-tooltip]="social.name"
+    >
+      <img [src]="social.icon" [alt]="social.name" />
+      <span>{{ social.name }}</span>
+    </a>
+  </div>
+  
