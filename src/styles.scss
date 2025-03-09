@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.sv_bg_color_1{
+    background-color: #132c63;
+}
+.sv_bg_color_1:hover{
+    background-color: #5c7dc5;
+}
+
+.sv_bg_color_2{
+    background-color: #808080;
+}
+.sv_tx_color_1{
+    color: #132c63;
+}
+.sv_tx_color_1:hover{
+    color: #2a4785;
+}
+.sv_tx_color_2{
+    color: #808080;
+}
+.sv_tx_color_2:hover{
+    color: #575454;
+}

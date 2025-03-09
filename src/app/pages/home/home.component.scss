@@ -1,0 +1,71 @@
+.products-section {
+    padding: 40px 0;
+    background-color: #f8f9fa; // Light background
+}
+
+.card {
+    border: none;
+    transition: box-shadow 0.3s ease-in-out;
+    min-height: 320px; // Ensure consistent height
+
+    &:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-text {
+    min-height: 100px; // Maintain equal text length
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #003d80;
+    }
+}
+
+
+
+// Services section
+.services-section {
+    padding: 40px 0;
+    background-color: #f8f9fa; // Light background
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    min-height: 220px; // Ensure equal height
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.service-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-text {
+    font-size: 0.95rem;
+    min-height: 80px; // Maintain equal height
+}
+

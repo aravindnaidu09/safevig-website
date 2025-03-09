@@ -1,0 +1,20 @@
+.navbar {
+    border-bottom: 2px solid #E0E0E0;
+  }
+  
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  
+  .nav-link {
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: rgb(77, 78, 80) !important;
+  }
+  .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #808080 !important;
+ }
+  

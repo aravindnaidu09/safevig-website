@@ -1,0 +1,24 @@
+.footer {
+    background: #003366; // Dark blue background
+    color: white;
+  }
+  
+  .footer-logo {
+    max-height: 40px;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footer-link:hover {
+    color: #FFD700; // Gold hover color
+  }
+  
+  .list-unstyled li {
+    margin-bottom: 8px;
+  }
+  
