@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-social-icons',
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './social-icons.component.html',
   styleUrl: './social-icons.component.scss'
 })

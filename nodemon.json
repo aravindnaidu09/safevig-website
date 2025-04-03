@@ -1,0 +1,5 @@
+{
+  "watch": ["src", "angular.json", "tsconfig.app.json"],
+  "ext": "ts,html,scss,json",
+  "exec": "npm run prerender"
+}
