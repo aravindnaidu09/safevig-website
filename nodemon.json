@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts,html,css,json",
+  "ignore": ["node_modules", "dist", "coverage"]
+  
+}

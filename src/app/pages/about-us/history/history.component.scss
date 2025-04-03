@@ -1,0 +1,23 @@
+.client-logo-slider {
+    position: relative;
+    height: 60px;
+  }
+  
+  .animate-scroll {
+    animation: scroll-logos 25s linear infinite;
+    white-space: nowrap;
+  }
+  
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .client-logo-slider img {
+    object-fit: contain;
+  }
+  
