@@ -16,7 +16,7 @@ export class CarouselComponent {
       // ✅ Now it's safe to use `document`
       document.getElementById('carousel')?.classList.add('active');
     }
-    console.log('Carousel component initialized');  
+   // console.log('Carousel component initialized');  
     
   }
 }

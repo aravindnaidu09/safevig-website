@@ -1,0 +1,41 @@
+.industry-partners-page {
+  background-color: #f9f9f9;
+
+  .section-title {
+    font-weight: 700;
+    color: #132c63;
+    font-size: 2rem;
+  }
+
+  .partner-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    .partner-title {
+      color: #132c63;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #808080;
+      padding-bottom: 8px;
+    }
+
+    .partner-list {
+      padding-left: 16px;
+      list-style-type: disc;
+      color: #444;
+
+      li {
+        padding: 6px 0;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

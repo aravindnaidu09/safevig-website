@@ -1,45 +1,33 @@
-<section class="contact-us-section py-5 bg-light">
-    <div class="container">
-      <div class="row g-4 align-items-stretch">
-        
-        <!-- Left: Google Map -->
-        <div class="col-md-6">
-          <div class="h-100 rounded shadow-sm overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.539708569682!2d78.38726757507745!3d17.43693348338717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e9179e9e81%3A0x5c6bc6fe2fce647!2sHiTech%20City%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1683638296922!5m2!1sen!2sin"
-              width="100%" height="100%" style="min-height: 450px; border: 0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+<section class="contact-us-section py-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Google Map -->
+      <section class="col-md-6 map-section rounded shadow-sm overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.539708569682!2d78.38726757507745!3d17.43693348338717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e9179e9e81%3A0x5c6bc6fe2fce647!2sHiTech%20City%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1683638296922!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="col-md-6 form-section rounded shadow-sm">
+        <h3 class="section-title mb-4">Contact Us</h3>
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Full Name" required [(ngModel)]="contact.fullName" name="fullName">
           </div>
-        </div>
-  
-        <!-- Right: Contact Form -->
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="fw-bold mb-4">Contact Us</h3>
-            <form>
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Full Name</label>
-                <input type="text" class="form-control" placeholder="Enter your name" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Email Address</label>
-                <input type="email" class="form-control" placeholder="you@example.com" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Subject</label>
-                <input type="text" class="form-control" placeholder="Subject of your message" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Message</label>
-                <textarea class="form-control" rows="4" placeholder="Type your message here..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100 fw-bold">Send Message</button>
-            </form>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email Address" required [(ngModel)]="contact.email" name="email">
           </div>
-        </div>
-  
-      </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Subject" required [(ngModel)]="contact.subject" name="subject">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Message" required [(ngModel)]="contact.message" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+      </section>
     </div>
-  </section>
-  
+  </div>
+</section>

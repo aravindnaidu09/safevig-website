@@ -1,206 +1,92 @@
 <app-carousel></app-carousel>
-<section>
-    <div class="container">
-        <div class="row">
-        <div class="col-12">
-          <p>
-            SafeVig Solutions is a forward-thinking, globally recognized organization that stands at the intersection of life sciences and cutting-edge technology, offering specialized solutions to pharmaceutical and biotechnology companies. With a primary focus on advancing pharmacovigilance, SafeVig leverages a robust combination of Automation, Artificial Intelligence (AI), Machine Learning (ML), and Blockchain to transform operational processes and resolve functional challenges within the industry. Since its inception, SafeVig has continually evolved its suite of services and technologies, enabling organizations to move beyond traditional compliance-based models and take full ownership of patient safety. SafeVig’s comprehensive solutions not only streamline and enhance pharmacovigilance operations but also bring exponential improvements in efficiency, achieving up to a 10X increase through the intelligent use of technology. With an unwavering commitment to synergy, quality, and innovation, SafeVig Solutions has become a trusted partner for global organizations, empowering them to adapt to regulatory demands with speed, accuracy, and enhanced safety oversight
-          </p>
+<section class="homepage-wrapper py-5">
+    <section class="container text-center mb-5">
+      <h1 class="sv_tx_color_1 fw-bold">Welcome to SafeVig Solutions</h1>
+      <p class="text-muted">
+       SafeVig Solutions is a forward-thinking, globally recognized organization that stands at the intersection of life sciences and cutting-edge technology, offering specialized solutions to pharmaceutical and biotechnology companies. With a primary focus on advancing pharmacovigilance, SafeVig leverages a robust combination of Automation, Artificial Intelligence (AI), Machine Learning (ML), and Blockchain to transform operational processes and resolve functional challenges within the industry. Since its inception, SafeVig has continually evolved its suite of services and technologies, enabling organizations to move beyond traditional compliance-based models and take full ownership of patient safety. SafeVig’s comprehensive solutions not only streamline and enhance pharmacovigilance operations but also bring exponential improvements in efficiency, achieving up to a 10X increase through the intelligent use of technology. With an unwavering commitment to synergy, quality, and innovation, SafeVig Solutions has become a trusted partner for global organizations, empowering them to adapt to regulatory demands with speed, accuracy, and enhanced safety oversight.
+      </p>
+    </section>
+  
+    <section class="container mb-5">
+      <h2 class="sv_tx_color_1 mb-4 text-center">Our Clients</h2>
+      <section class="client-logos d-flex flex-wrap justify-content-center gap-4">
+        <img src="./../../../assets/ClientsLogo/Nacto.png" alt="Natco" class="client-logo" />
+        <img src="./../../../assets/ClientsLogo/vivimed-logo.png" alt="Vivimed" class="client-logo" />
+        <img src="./../../../assets/ClientsLogo/Pulse.png" alt="Pulse Pharma" class="client-logo" />
+        <img src="./../../../assets/ClientsLogo/Lupin.png" alt="Lupin" class="client-logo bg-success" />
+        <img src="./../../../assets/ClientsLogo/Spansules.png" alt="Spansules" class="client-logo" />
+        <img src="./../../../assets/ClientsLogo/gravity_logo.png" alt="Graviti Pharma" class="client-logo" />
+        <img src="./../../../assets/ClientsLogo/SP-Accure-Logo.png" alt="SP Accure Labs" class="client-logo" />
+      </section>
+    </section>
+  
+    <section class="container mb-5">
+      <h2 class="sv_tx_color_1 mb-4 text-center">Our Products</h2>
+      <section class="row g-4">
+        <section class="col-md-3" *ngFor="let product of products">
+          <a [routerLink]="product.link" class="product-card d-block text-center p-3 shadow-sm rounded text-decoration-none">
+            <img [src]="product.logo" [alt]="product.name" class="product-logo mb-2" />
+            <h5 class="sv_tx_color_1">{{ product.name }}</h5>
+          </a>
+        </section>
+      </section>
+    </section>
+  
+    <section class="container mb-5">
+      <h2 class="sv_tx_color_1 mb-4 text-center">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a routerLink="/services/pharmacovigilance" class="text-decoration-none">
+            <div class="card h-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title sv_tx_color_1">Pharmacovigilance Services</h5>
+              </div>
+            </div>
+          </a>
         </div>
+        <div class="col-md-4">
+          <a routerLink="/services/clinical-research" class="text-decoration-none">
+            <div class="card h-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title sv_tx_color_1">Clinical Research Services</h5>
+              </div>
+            </div>
+          </a>
         </div>
-    </div>
-</section>
-<section class="products-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2>Our Products</h2>
+        <div class="col-md-4">
+          <a routerLink="/services/data-management" class="text-decoration-none">
+            <div class="card h-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title sv_tx_color_1">Clinical Data Management</h5>
+              </div>
             </div>
+          </a>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig Signal</h5>
-                        <p class="card-text">
-                            A smart extraction tool designed to retrieve critical data from multiple sources, streamline 
-                            processes, and maintain high accuracy with minimal manual intervention.
-                        </p>
-                        <a href="/SVS" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">SVS</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig Digital Literature</h5>
-                        <p class="card-text">
-                            A smart extraction tool designed to retrieve critical data from multiple sources, streamline 
-                            processes, and maintain high accuracy with minimal manual intervention.
-                        </p>
-                        <a href="/Literature" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">Literature</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig Digital Agreements</h5>
-                        <p class="card-text">
-                            A comprehensive solution for pharmacovigilance agreements, ensuring regulatory compliance,
-                            seamless contract management, and operational efficiency in a secure environment.
-                        </p>
-                        <a href="/SVA" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">SVA</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig Digital Aggregate</h5>
-                        <p class="card-text">
-                            An AI-powered data entry automation tool that minimizes manual errors, enhances workflow efficiency, 
-                            and improves overall data accuracy for enterprises.
-                        </p>  
-                        <a href="/SVR" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">SVR</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig PSMF</h5>
-                        <p class="card-text">
-                            A smart extraction tool designed to retrieve critical data from multiple sources, streamline 
-                            processes, and maintain high accuracy with minimal manual intervention.
-                        </p>    
-                        <a href="/SVP" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">SVP</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig InTake</h5>
-                        <p class="card-text">
-                            Automates case intake from diverse sources including email, fax, and portals, improving case intake efficiency and accuracy.
-                        </p>
-                        <a href="/InTake" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">InTake</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 py-2">
-                <div class="card product-card border shadow-lg">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">SafeVig L2A Monitoring</h5>
-                        <p class="card-text">
-                            Monitors L2A activities for regulatory submissions, tracks compliance, and automates workflows to improve submission accuracy and speed.
-                        </p>
-                        <a href="/L2A" class="btn sv_bg_color_1 sv_tx_color_2 fw-bolder w-100">L2A</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="services-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2>Our Services</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="service-card">
-                    <h5 class="service-title">Technology Services</h5>
-                    <p class="service-text">
-                        We provide cutting-edge technological solutions to streamline operations, enhance 
-                        efficiency, and drive digital transformation in pharmacovigilance and clinical research.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <div class="service-card">
-                    <h5 class="service-title">Functional Services</h5>
-                    <p class="service-text">
-                        Our functional services ensure end-to-end compliance, risk management, and strategic
-                        outsourcing to support clinical and regulatory processes.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <div class="service-card">
-                    <h5 class="service-title">Clinical Data Management & Research</h5>
-                    <p class="service-text">
-                        From data collection to statistical analysis, we offer comprehensive clinical data 
-                        management and research services to ensure accurate and regulatory-compliant outcomes.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="why-safevig-section py-5">
-    <div class="container">
-        <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h2>Why Work with SafeVig?</h2>
-            </div>
-        </div>
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">Cutting-Edge Technology Integration</h5>
-                        <p class="card-text">
-                            SafeVig leverages the latest advancements in Automation, AI, Machine Learning, and Blockchain 
-                            to deliver innovative solutions that enhance operational efficiency, streamline processes, 
-                            and ensure compliance. By staying ahead of technological trends, SafeVig enables pharmaceutical 
-                            and biotechnology companies to tackle industry challenges effectively and efficiently.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">Comprehensive Solutions for Every Need</h5>
-                        <p class="card-text">
-                            With a focus on both operational and regulatory excellence, SafeVig offers a wide range of 
-                            solutions tailored to the unique needs of the pharmaceutical and biotechnology sectors. 
-                            Whether it’s pharmacovigilance, safety reporting, or case processing, SafeVig provides 
-                            end-to-end solutions that ensure accuracy, speed, and seamless integration with existing systems.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title sv_tx_color_1 border-botton">Proven Expertise and Global Reach</h5>
-                        <p class="card-text">
-                            Since its inception, SafeVig has built a strong reputation for delivering high-quality, 
-                            reliable solutions that meet the dynamic needs of global organizations. Trusted by industry 
-                            leaders, SafeVig's expertise and commitment to innovation ensure that partners can navigate 
-                            regulatory complexities and operational challenges with confidence and precision.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
+  
+    <section class="container mb-5">
+      <h2 class="sv_tx_color_1 mb-4 text-center">Why Work with SafeVig?</h2>
+      <section class="row">
+        <section class="col-md-4">
+          <div class="info-box p-2 h-100 border rounded">
+            <h5 class="sv_tx_color_1">Cutting-Edge Technology</h5>
+            <p class="fst-italic">SafeVig leverages the latest advancements in Automation, AI, Machine Learning, and Blockchain to deliver innovative solutions that enhance operational efficiency, streamline processes, and ensure compliance. By staying ahead of technological trends, SafeVig enables pharmaceutical and biotechnology companies to tackle industry challenges effectively and efficiently.
+</p>
+          </div>
+        </section>
+        <section class="col-md-4">
+          <div class="info-box p-3 h-100 border rounded">
+            <h5 class="sv_tx_color_1">Comprehensive Solutions</h5>
+            <p class="fst-italic">With a focus on both operational and regulatory excellence, SafeVig offers a wide range of solutions tailored to the unique needs of the pharmaceutical and biotechnology sectors. Whether it’s pharmacovigilance, safety reporting, or case processing, SafeVig provides end-to-end solutions that ensure accuracy, speed, and seamless integration with existing systems.</p>
+          </div>
+        </section>
+        <section class="col-md-4">
+          <div class="info-box p-3 h-100 border rounded">
+            <h5 class="sv_tx_color_1">Proven Global Expertise</h5>
+            <p class="fst-italic">Since its inception, SafeVig has built a strong reputation for delivering high-quality, reliable solutions that meet the dynamic needs of global organizations. Trusted by industry leaders, SafeVig's expertise and commitment to innovation ensure that partners can navigate regulatory complexities and operational challenges with confidence and precision.</p>
+          </div>
+        </section>
+      </section>
+    </section>
+  </section>
