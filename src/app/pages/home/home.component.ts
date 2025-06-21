@@ -13,13 +13,13 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent {
   products = [
-    { name: 'SafeVig Signal', logo: './../../../assets/SV-Prod_logos/SafeVig_Signal.png', link: '/SVS' },
-    { name: 'Digital Literature', logo: './../../../assets/SV-Prod_logos/SafeVig_Literature.png', link: '/SVL' },
-    { name: 'Digital Agreements', logo: './../../../assets/SV-Prod_logos/SafeVig-Agreements.png', link: '/SVA' },
-    { name: 'Digital Aggregate', logo: './../../../assets/SV-Prod_logos/SafeVig_Aggregate.png', link: '/SVR' },
-    { name: 'SafeVig PSMF', logo: './../../../assets/SV-Prod_logos/SafeVig_PSMF.png', link: '/SVP' },
-    { name: 'SafeVig InTake', logo: './../../../assets/SV-Prod_logos/SafeVig_Intake.png', link: '/SVI' },
-    { name: 'L2A Monitoring', logo: './../../../assets/SV-Prod_logos/SafeVig_L2a.png', link: '/SVL2A' }
+    { name: 'SafeVig Signal', logo: './../../../assets/Icons/ProductLogo/Signal.svg', link: '/SVS' },
+    { name: 'Digital Literature', logo: './../../../assets/Icons/ProductLogo/Literature.svg', link: '/SVL' },
+    { name: 'Digital Agreements', logo: './../../../assets/Icons/ProductLogo/Agreements.svg', link: '/SVA' },
+    { name: 'Digital Aggregate', logo: './../../../assets/Icons/ProductLogo/Reports.svg', link: '/SVR' },
+    { name: 'SafeVig PSMF', logo: './../../../assets/Icons/ProductLogo/PSMF.svg', link: '/SVP' },
+    { name: 'SafeVig InTake', logo: './../../../assets/Icons/ProductLogo/Intake.svg', link: '/SVI' },
+    { name: 'L2A Monitoring', logo: './../../../assets/Icons/ProductLogo/L2A Monitoring.svg', link: '/SVL2A' }
   ];
 
 }

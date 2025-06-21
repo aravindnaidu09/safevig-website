@@ -18,37 +18,72 @@
       <section class="col-lg-7">
         <div class="application-form shadow-sm">
           <h3 class="section-title">Apply Now</h3>
-          <form (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-              <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Email Address</label>
-              <input type="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Applying For</label>
-              <select class="form-select" required>
-                <option value="">Select a position</option>
-                <option *ngFor="let job of jobOpenings" [value]="job.title">{{ job.title }}</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Upload Resume</label>
-              <input type="file" class="form-control" required accept=".pdf,.doc,.docx">
-              <small class="text-muted">Max size: 5MB</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Message (Optional)</label>
-              <textarea class="form-control" rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn apply-btn">Submit Application</button>
-          </form>
+       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <!-- Full Name -->
+  <div class="mb-3">
+    <label class="form-label">Full Name</label>
+    <input type="text" class="form-control" formControlName="name" />
+    <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="text-danger">
+      Full Name is required
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="mb-3">
+    <label class="form-label">Email Address</label>
+    <input type="email" class="form-control" formControlName="email" />
+    <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="text-danger">
+      Valid Email is required
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="mb-3">
+    <label class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" formControlName="phone" />
+    <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="text-danger">
+      Phone is required
+    </div>
+  </div>
+
+  <!-- Job Title -->
+  <div class="mb-3">
+    <label class="form-label">Applying For</label>
+    <select class="form-select" formControlName="applyFor">
+      <option value="">Select a position</option>
+      <option *ngFor="let job of jobOpenings" [value]="job.title">{{ job.title }}</option>
+    </select>
+    <div *ngIf="contactForm.get('applyFor')?.touched && contactForm.get('applyFor')?.invalid" class="text-danger">
+      Please select a job
+    </div>
+  </div>
+
+  <!-- Resume -->
+  <div class="mb-3">
+    <label class="form-label">Upload Resume</label>
+    <input type="file" class="form-control" (change)="onFileChange($event)" accept=".pdf,.doc,.docx" />
+    <div *ngIf="contactForm.get('resume')?.touched && contactForm.get('resume')?.invalid" class="text-danger">
+      Resume is required
+    </div>
+  </div>
+
+  <!-- Message -->
+  <div class="mb-3">
+    <label class="form-label">Message (Optional)</label>
+    <textarea class="form-control" rows="4" formControlName="message"></textarea>
+  </div>
+
+  <!-- Loader -->
+  <div *ngIf="isSubmitting" class="text-success">Submitting...</div>
+
+  <!-- Success/Failure Message -->
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+
+  <button type="submit" class="btn apply-btn" [disabled]="isSubmitting">Submit Application</button>
+</form>
+
+
         </div>
       </section>
     </div>

@@ -1,7 +1,7 @@
 <section class="contact-us-section py-5">
   <div class="container">
     <div class="row g-4">
-      <!-- Google Map -->
+      <!-- Map -->
       <section class="col-md-6 map-section rounded shadow-sm overflow-hidden">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.539708569682!2d78.38726757507745!3d17.43693348338717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e9179e9e81%3A0x5c6bc6fe2fce647!2sHiTech%20City%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1683638296922!5m2!1sen!2sin"
@@ -12,20 +12,54 @@
       <!-- Contact Form -->
       <section class="col-md-6 form-section rounded shadow-sm">
         <h3 class="section-title mb-4">Contact Us</h3>
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+          <!-- Full Name -->
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Full Name" required [(ngModel)]="contact.fullName" name="fullName">
+            <input type="text" class="form-control" formControlName="name" placeholder="Full Name" />
+            <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="text-danger">
+              Full Name is required.
+            </div>
           </div>
+
+          <!-- Email -->
           <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Email Address" required [(ngModel)]="contact.email" name="email">
+            <input type="email" class="form-control" formControlName="email" placeholder="Email Address" />
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']" class="text-danger">
+              Email is required.
+            </div>
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']" class="text-danger">
+              Enter a valid email.
+            </div>
           </div>
+
+          <!-- Phone -->
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Subject" required [(ngModel)]="contact.subject" name="subject">
+            <input type="tel" class="form-control" formControlName="phone" />
+    <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="text-danger">
+      Phone is required
+    </div>
           </div>
+
+          <!-- Message -->
           <div class="mb-3">
-            <textarea class="form-control" rows="5" placeholder="Message" required [(ngModel)]="contact.message" name="message"></textarea>
+            <textarea class="form-control" rows="5" formControlName="message" placeholder="Message"></textarea>
+            <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="text-danger">
+              Message is required.
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+
+          <!-- Loader -->
+          <div *ngIf="isSubmitting" class="text-info">Sending...</div>
+
+          <!-- Status Messages -->
+          <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100" [disabled]="isSubmitting || contactForm.invalid">
+            Send Message
+          </button>
         </form>
       </section>
     </div>
