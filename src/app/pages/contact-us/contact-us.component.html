@@ -35,7 +35,7 @@
 
           <!-- Phone -->
           <div class="mb-3">
-            <input type="tel" class="form-control" formControlName="phone" />
+            <input type="tel" class="form-control"  placeholder="Phone Number" formControlName="phone" />
     <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="text-danger">
       Phone is required
     </div>
@@ -57,7 +57,7 @@
           <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
 
           <!-- Submit Button -->
-          <button type="submit" class="btn btn-primary w-100" [disabled]="isSubmitting || contactForm.invalid">
+          <button type="submit" class="btn btn-primary w-100">
             Send Message
           </button>
         </form>

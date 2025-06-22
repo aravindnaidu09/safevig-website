@@ -37,26 +37,33 @@ private fb = inject(FormBuilder);
   });
 
   onSubmit(): void {
+    
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
+const formData = new FormData();
+formData.append('name', this.contactForm.value.name ?? '');
+formData.append('email', this.contactForm.value.email ?? '');
+formData.append('phone', this.contactForm.value.phone ?? '');
+formData.append('message', this.contactForm.value.message ?? '');
 
     this.isSubmitting = true;
     this.successMessage = '';
     this.errorMessage = '';
-
-    this.http.post('https://www.safevigsolutions.com/phpemailservices/Send-Mail-Services_contactus.php', this.contactForm.value, { responseType: 'text' }).subscribe({
+this.http.post('https://www.safevigsolutions.com/phpemailservices/Send-Mail-Services_contactus.php',  
+  formData, { responseType: 'text' }).subscribe({
       next: (res) => {
         this.successMessage = res;
         this.contactForm.reset();
       },
       error: (err) => {
-        this.errorMessage = err?.error || 'Message failed to send.';
+        this.errorMessage = err?.error || 'Failed to send application.';
       },
       complete: () => {
         this.isSubmitting = false;
       }
     });
+  
   }
 }
