@@ -1,54 +1,61 @@
 .social-icons {
-    position: fixed;
-    right: 0px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    z-index: 1000;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; // <- critical to prevent expansion overlap
+  gap: 12px;
+}
+
+.social-button {
+  background-color: #ffffff;
+  border-radius: 50px;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: #333;
+  display: inline-flex; // ensures no layout conflict
+  align-items: center;
+  justify-content: center; // ensures perfect center alignment
+  padding: 0; // remove padding to avoid off-center
+  transition: width 0.3s ease, background-color 0.3s ease;
+  position: relative;
+
+  img {
+    width: 24px; // visually optimized inside 48px
+    height: 24px;
+    transition: transform 0.3s ease;
   }
-  
-  .icon {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 5px;
-    border-radius: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-    width: 50px;
+
+  span {
+    position: absolute;
+    left: 52px;
     white-space: nowrap;
-  }
-  
-  .icon img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .icon span {
-    margin-left: 10px;
     opacity: 0;
     transform: translateX(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
   }
-  
-  .icon:hover {
-    width: 150px;
+
+  &:hover {
+    width: 160px;
     justify-content: flex-start;
+    padding-left: 12px;
+
+    img {
+      transform: scale(1.1);
+    }
+
+    span {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  
-  .icon:hover span {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .icon:hover img {
-    transform: scale(1.1);
-  }
-  
+}

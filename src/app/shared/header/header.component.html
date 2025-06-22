@@ -1,71 +1,71 @@
-<nav class="navbar navbar-expand-lg bg-white shadow">
-  <div class="container">
-    <a class="navbar-brand sv_tx_color_1 fw-bold" routerLink="/">
-      <img src="./assets/Logos/Safevig_LOGO.png" alt="Logo" height="40" class="me-2">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top" [class.scrolled]="isScrolled"
+  [class.show]="isVisible" [class.hide]="!isVisible">
+  <div class="container-xl d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <img src="/assets/Logos/Safevig_LOGO.png" alt="SafeVig Logo" />
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+    <!-- Hamburger Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+
+    <!-- Navigation -->
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav d-flex align-items-center gap-3">
         <li class="nav-item">
-          <a class="nav-link sv_tx_color_1" routerLink="/">Home</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
         </li>
+
+        <!-- About Us -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle sv_tx_color_1" href="#" id="aboutDropdown" role="button"
-            data-bs-toggle="dropdown">
+          <a class="nav-link d-flex align-items-center gap-1" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             About Us
+            <img src="/assets/Icons/dropdown-caret.webp" alt="caret" />
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="/ABT-CMPY">Company Overview</a></li>
-            <!-- <li><a class="dropdown-item" routerLink="/ABT-HIST">History</a></li> -->
             <li><a class="dropdown-item" routerLink="/ABT-IDPT">Industry Partners</a></li>
           </ul>
         </li>
 
         <!-- Services -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle sv_tx_color_1" href="#" id="servicesDropdown" role="button"
-            data-bs-toggle="dropdown">
+          <a class="nav-link d-flex align-items-center gap-1" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             Services
+            <img src="/assets/Icons/dropdown-caret.webp" alt="caret" />
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/TECH-SERV">Pharmacovigilance Services</a></li>
-            <li><a class="dropdown-item" routerLink="/FUNC-SERV">Clinical Research Services</a></li>
-            <li><a class="dropdown-item" routerLink="/CLNC-SERV">Clinical Data Management</a></li>
-            <!-- <li><a class="dropdown-item" routerLink="/services/research">Clinical Research</a></li> -->
+            <li><a class="dropdown-item" routerLink="/TECH-SERV">Pharmacovigilance</a></li>
+            <li><a class="dropdown-item" routerLink="/FUNC-SERV">Clinical Research</a></li>
+            <li><a class="dropdown-item" routerLink="/CLNC-SERV">Data Management</a></li>
           </ul>
         </li>
 
         <!-- Products -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle sv_tx_color_1" href="#" id="productsDropdown" role="button"
-            data-bs-toggle="dropdown">
+          <a class="nav-link d-flex align-items-center gap-1" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             Products
+            <img src="/assets/Icons/dropdown-caret.webp" alt="caret" />
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/SVA">SafeVig Agreements</a></li>
-            <li><a class="dropdown-item" routerLink="/SVR"> SafeVig Aggregate Reports</a></li>
-            <li><a class="dropdown-item" routerLink="/SVP">SafeVig PSMF</a></li>
-            <li><a class="dropdown-item" routerLink="/SVS">SafeVig Signal</a></li>
-            <li><a class="dropdown-item" routerLink="/SVL">SafeVig Literature</a></li>
-            <li><a class="dropdown-item" routerLink="/SVI">SafeVig InTake</a></li>
-            <li><a class="dropdown-item" routerLink="/SVL2A">SafeVig L2A</a></li>
-            <!-- <li><a class="dropdown-item" routerLink="/products/iqc">iQC: ICSR Quality & Compliance</a></li>
-            <li><a class="dropdown-item" routerLink="/products/lit-mart">LIT-MART: Literature Management</a></li>
-            <li><a class="dropdown-item" routerLink="/products/aart">AART: Aggregate Reports</a></li>
-            <li><a class="dropdown-item" routerLink="/products/im-metrics">IM-Metrics: ICSR Metrics</a></li> -->
+            <li><a class="dropdown-item" routerLink="/SVA">Agreements</a></li>
+            <li><a class="dropdown-item" routerLink="/SVR">Aggregate Reports</a></li>
+            <li><a class="dropdown-item" routerLink="/SVP">PSMF</a></li>
+            <li><a class="dropdown-item" routerLink="/SVS">Signal</a></li>
+            <li><a class="dropdown-item" routerLink="/SVL">Literature</a></li>
+            <li><a class="dropdown-item" routerLink="/SVI">InTake</a></li>
+            <li><a class="dropdown-item" routerLink="/SVL2A">L2A</a></li>
           </ul>
         </li>
 
-        <!-- <li class="nav-item"><a class="nav-link sv_tx_color_1" routerLink="/privacy-policy" routerLinkActive="active">Privacy Policy</a></li> -->
-        <li class="nav-item"><a class="nav-link sv_tx_color_1" routerLink="/careers" routerLinkActive="active">Careers</a></li>
-        <li class="nav-item"><a class="nav-link sv_tx_color_1" routerLink="/contact-us" routerLinkActive="active">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/careers" routerLinkActive="active">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact-us" routerLinkActive="active">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-<!-- Compare this snippet from src/app/shared/footer/footer.component.html: -->

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +7,28 @@ import { Router } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class FooterComponent {
-  constructor(private router: Router) {}
-scrollToProductsServices(name: string) {
+export class FooterComponent implements AfterViewInit {
+  constructor(private router: Router,
+    private renderer: Renderer2, private el: ElementRef
+  ) { }
+
+  ngAfterViewInit(): void {
+    const elements = this.el.nativeElement.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(entry.target, 'in-view');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach((el: any) => observer.observe(el));
+  }
+
+  scrollToProductsServices(name: string) {
     if (this.router.url === '/') {
       // Already on home page
       this.scrollToElement(name);
@@ -27,4 +46,6 @@ scrollToProductsServices(name: string) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+
 }

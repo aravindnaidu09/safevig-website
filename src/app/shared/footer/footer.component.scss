@@ -1,24 +1,84 @@
 .footer {
-    background: #003366; // Dark blue background
-    color: white;
-  }
-  
+  background-color: #003366;
+  color: white;
+  font-family: var(--font-family);
+  line-height: 1.6;
+
   .footer-logo {
-    max-height: 40px;
+    max-height: 42px;
   }
-  
+
+  .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .footer-about-text {
+    font-size: 0.95rem;
+    color: #d9e2f3;
+    text-align: justify;
+  }
+
   .footer-link {
-    color: white;
+    color: #ffffff;
+    font-size: 0.95rem;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: var(--color-accent); // pastel green or #FFD700
+      transform: translateX(6px); // smooth slide-in right
+    }
+
+    // Decorative line effect on hover (optional)
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--color-accent);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
-  
-  .footer-link:hover {
-    color: #FFD700; // Gold hover color
+
+  // Fade-in effect on scroll (optional AOS-like)
+  .footer [data-animate="fade-in"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  
-  .list-unstyled li {
-    margin-bottom: 8px;
+
+
+  hr {
+    opacity: 0.15;
   }
-  
+
+  .fab {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 767px) {
+    .footer-about-text {
+      text-align: left;
+    }
+
+    .footer-heading {
+      margin-top: 1rem;
+    }
+  }
+}
