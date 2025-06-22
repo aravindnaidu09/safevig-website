@@ -1,1 +1,79 @@
-<p>history works!</p>
+ <section class="why-partner-section container py-5">
+ 
+ <h2 class="text-center section-title">
+    Why Partner with <span class="brand">SafeVig</span>
+  </h2>
+  <section class="row">
+    
+    <div class="col-md-4" *ngFor="let item of partnerBenefits">
+      
+      <section class="benefit-card h-100 p-4">
+        <div class="icon-circle mb-3">
+          <i [class]="item.icon"></i>
+        </div>
+        <h5 class="benefit-title">{{ item.title }}</h5>
+        <p class="benefit-desc">{{ item.description }}</p>
+      </section>
+    </div>
+  </section>
+  
+</section>
+
+
+<section class="timeline-container">
+  <h2 class="timeline-header">SafeVig History</h2>
+  <div class="timeline">
+    <div class="timeline-item left">
+      <div class="content" style="background-color: #132c63;">
+        <h3>June 2023</h3>
+        <p>SafeVig founded with a primary focus on pharmacovigilance.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content" style="background-color: #808080;">
+        <h3>2024</h3>
+        <p>Introduced AI-powered safety signal detection tools and automation-driven solutions.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="content" style="background-color: #132c63;">
+        <h3>2025</h3>
+        <p>Became a global partner for regulatory compliance and drug safety solutions.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content" style="background-color: #808080;">
+        <h3>Today</h3>
+        <p>Expanded into regulatory affairs and clinical data management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="safevig-timeline container py-5">
+  <h2 class="text-center text-primary fw-bold mb-5">SafeVig History</h2>
+
+  <section class="timeline">
+    <div class="timeline-item left" *ngFor="let item of timelineData; let i = index">
+      <div class="timeline-pill" [ngClass]="item.color">
+        <div class="timeline-content">
+          <div class="year-icon">
+            <div class="year">{{ item.year }}</div>
+            <div class="icon">
+              <i [class]="item.icon"></i>
+            </div>
+          </div>
+          <div class="description">
+            <h5>{{ item.title }}</h5>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section> -->
+

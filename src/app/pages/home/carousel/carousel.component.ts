@@ -1,4 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component,Inject, PLATFORM_ID} from '@angular/core';
 declare var bootstrap: any;
 
 @Component({
@@ -8,11 +9,14 @@ declare var bootstrap: any;
   styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent {
-  ngAfterViewInit(): void {
-    const myCarousel = document.querySelector('#carouselExampleIndicators');
-    new bootstrap.Carousel(myCarousel, {
-      interval: 5000, // Auto-slide every 5 seconds
-      ride: 'carousel'
-    });
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      // ✅ Now it's safe to use `document`
+      document.getElementById('carousel')?.classList.add('active');
+    }
+   // console.log('Carousel component initialized');  
+    
   }
 }

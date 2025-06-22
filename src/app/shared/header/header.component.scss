@@ -12,9 +12,21 @@
   }
   
   .nav-link:hover {
-    color: rgb(77, 78, 80) !important;
+    color: #132c63 !important;
   }
   .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-    color: #808080 !important;
+    color: #132c63 !important;
  }
   
+ .dropdown-item{
+  color: #132c63;
+  font: 1em 'Poppins', sans-serif;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: #132c63;
+    color: #fff;
+  }
+ }

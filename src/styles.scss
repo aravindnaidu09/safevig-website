@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-
+    body {
+    font-family: 'popins', sans-serif;
+    }
 .sv_bg_color_1{
-    background-color: #132c63;
+    background-color: #132c63 !important;
 }
 .sv_bg_color_1:hover{
     background-color: #5c7dc5;

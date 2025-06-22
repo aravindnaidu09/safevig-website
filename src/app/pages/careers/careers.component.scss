@@ -1,0 +1,68 @@
+.careers-section {
+  background-color: #f4f7fa;
+
+  .section-title {
+    color: #132c63;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .job-listing, .application-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .position-list {
+    list-style: none;
+    padding: 0;
+
+    .position-item {
+      border-bottom: 1px solid #eaeaea;
+      padding: 1rem 0;
+
+      h5 {
+        margin-bottom: 0.5rem;
+        color: #132c63;
+        font-weight: 500;
+      }
+
+      p {
+        margin-bottom: 0;
+        color: #808080;
+
+        i {
+          margin-right: 0.5rem;
+          color: #132c63;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .form-label {
+    color: #132c63;
+    font-weight: 500;
+  }
+
+  .form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    &:focus {
+      box-shadow: none;
+      border-color: #132c63;
+    }
+  }
+
+  .apply-btn {
+    background-color: #132c63;
+    color: #fff;
+    font-weight: 600;
+    &:hover {
+      background-color: darken(#132c63, 10%);
+    }
+  }
+}

@@ -1,10 +1,10 @@
 .social-icons {
     position: fixed;
-    right: 20px;
+    right: 0px;
     bottom: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
     z-index: 1000;
   }
   
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     background: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     text-decoration: none;
