@@ -16,6 +16,9 @@ import { IndustryPartnerComponent } from './pages/about-us/industry-partner/indu
 import { IntakeComponent } from './pages/products/intake/intake.component';
 import { LiteratureComponent } from './pages/products/literature/literature.component';
 import { L2aComponent } from './pages/products/l2a/l2a.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +36,9 @@ export const routes: Routes = [
   {path:'ABT-CMPY', component: CompanyOverviewComponent},
   {path:'ABT-HIST', component: HistoryComponent},
   {path:'ABT-IDPT', component: IndustryPartnerComponent},
+  {path:'ALL-PROD', component: ProductsComponent},
+  {path:'ALL-SERV', component: ServicesComponent},
+  {path:'ALL-ABTS', component: AboutUsComponent},
 
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'careers', component: CareersComponent },

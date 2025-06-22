@@ -1,0 +1,25 @@
+<section class="mobile-sticky-navbar">
+  <!-- Logo (optional) -->
+  <div class="navbar-logo text-center mb-2">
+    <a routerLink="/">
+      <img src="/assets/Logos/Safevig_LOGO.png" alt="SafeVig Logo" class="logo-img" />
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav-links d-flex justify-content-between align-items-center px-1">
+    <a
+  routerLink="/"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+>
+  <i class="fas fa-home"></i>
+</a>
+
+    <a routerLink="/ALL-ABTS" routerLinkActive="active">About</a>
+    <a routerLink="/ALL-SERV" routerLinkActive="active">Services</a>
+    <a routerLink="/ALL-PROD" routerLinkActive="active">Products</a>
+    <a routerLink="/careers" routerLinkActive="active">Careers</a>
+    <a routerLink="/contact-us" routerLinkActive="active"><i class="fas fa-phone"></i></a>
+  </nav>
+</section>

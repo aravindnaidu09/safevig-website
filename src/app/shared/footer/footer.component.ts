@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,24 +10,26 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements AfterViewInit {
   constructor(private router: Router,
-    private renderer: Renderer2, private el: ElementRef
+    private renderer: Renderer2, private el: ElementRef,@Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
-  ngAfterViewInit(): void {
-    const elements = this.el.nativeElement.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver(
-      (entries) => {
+ ngAfterViewInit(): void {
+  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+    const target = document.querySelector('.observe-footer');
+    if (target) {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            this.renderer.addClass(entry.target, 'in-view');
+            target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target); // Optional cleanup
           }
         });
-      },
-      { threshold: 0.1 }
-    );
+      });
 
-    elements.forEach((el: any) => observer.observe(el));
+      observer.observe(target);
+    }
   }
+}
 
   scrollToProductsServices(name: string) {
     if (this.router.url === '/') {
