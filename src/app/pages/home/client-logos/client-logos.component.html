@@ -1,0 +1,15 @@
+<section class="client-logo-carousel py-5">
+  <div class="container overflow-hidden">
+    <h2 class="text-center section-title mb-4">Our Clients</h2>
+
+    <section class="logo-scroller">
+      <section class="scroller-track">
+        <ng-container *ngFor="let logo of allLogos">
+          <section class="logo-item d-flex align-items-center justify-content-center">
+            <img [src]="logo.src" [alt]="logo.alt" class="client-logo img-fluid" />
+          </section>
+        </ng-container>
+      </section>
+    </section>
+  </div>
+</section>

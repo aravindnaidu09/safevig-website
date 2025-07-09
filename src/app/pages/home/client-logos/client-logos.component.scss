@@ -1,0 +1,48 @@
+.client-logo-carousel {
+  background-color: #f8f9fa;
+
+  .section-title {
+    color: #132c63;
+    font-weight: 700;
+  }
+
+  .logo-scroller {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 120px;
+
+    .scroller-track {
+      display: flex;
+      width: max-content;
+      animation: scrollLogos 30s linear infinite;
+    }
+
+    .logo-item {
+      flex: 0 0 auto;
+      width: 180px;
+      margin: 0 20px;
+      opacity: 0.8;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      img {
+        max-height: 80px;
+        max-width: 100%;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

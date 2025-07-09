@@ -2,9 +2,9 @@
       <h2 class="sv_tx_color_1 mb-4 text-center">Our Products</h2>
       <section class="row g-4">
         <section class="col-md-3" *ngFor="let product of products">
-          <a [routerLink]="product.link" class="product-card d-block text-center p-3 shadow-sm rounded text-decoration-none">
-            <img [src]="product.logo" [alt]="product.name" class="product-logo mb-2" />
-            <h5 class="sv_tx_color_1">{{ product.name }}</h5>
+          <a [routerLink]="product?.link" class="product-card d-block text-center p-3 shadow-sm rounded text-decoration-none">
+            <img [src]="product.logo" [alt]="product?.name" class="product-logo mb-2" />
+            <h5 class="sv_tx_color_1">{{ product?.name }}</h5>
           </a>
         </section>
       </section>
