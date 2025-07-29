@@ -1,6 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener,PLATFORM_ID, Inject,  } from '@angular/core';
 import { RouterModule } from '@angular/router';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent implements AfterViewInit {
   isScrolled = false;
   lastScrollTop = 0;
   isVisible = true;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
  async ngAfterViewInit(): Promise<void> {
     if (isPlatformBrowser(this.platformId)) {
       const Dropdown = (await import('bootstrap/js/dist/dropdown')).default;
@@ -24,9 +26,7 @@ export class HeaderComponent implements AfterViewInit {
       });
     }
   }
-  platformId(platformId: any) {
-    throw new Error('Method not implemented.');
-  }
+ 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;

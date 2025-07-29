@@ -19,10 +19,12 @@ import { L2aComponent } from './pages/products/l2a/l2a.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { BaBeComponent } from './pages/ba-be/ba-be.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   {path: 'home', component: HomeComponent},
+  {path: 'babe', component: BaBeComponent},
   {path:'SVA', component: SvAgreementComponent},
   {path:'SVR', component: SvAggregateComponent},
   {path:'SVP', component: SvPsmfComponent},

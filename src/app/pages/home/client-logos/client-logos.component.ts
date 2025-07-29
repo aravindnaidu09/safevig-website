@@ -11,6 +11,7 @@ export class ClientLogosComponent implements OnInit {
  clientLogos = [
 { src: 'https://www.biologicale.com/images/logo2.png', alt: 'Bialogical E' },
 { src: 'https://therdose.com/assets/images/therdose.png', alt: 'Therdose' },
+{ src: 'https://www.chemopharmaceuticals.com/wp-content/uploads/2021/10/Logo_chemo.jpg', alt: 'ChemoPharma' },
 { src: './../../../assets/ClientsLogo/Nacto.png', alt: 'Nacto' },
 { src: 'https://upload.wikimedia.org/wikipedia/en/f/f7/The_Lupin_Logo.svg', alt: 'Lupin' },
 { src: './../../../assets/ClientsLogo/gravity_logo.png', alt: 'gravity' },

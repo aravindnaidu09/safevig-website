@@ -9,8 +9,9 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(),
-    provideClientHydration(),
+   // provideClientHydration(),
     // The withEventReplay() function is used to replay events that were missed during the initial
-    provideRouter(routes, withEnabledBlockingInitialNavigation()),
-    provideClientHydration(withEventReplay())]
+    provideRouter(routes, withEnabledBlockingInitialNavigation())
+    //provideClientHydration(withEventReplay())
+    ]
 };
