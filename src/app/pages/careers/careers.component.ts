@@ -15,6 +15,7 @@ export class CareersComponent {
   constructor(private http: HttpClient) {}
     private fb = inject(FormBuilder);
   jobOpenings = [
+    { title: 'Sales & Business Development Executive (Clinical Services)', experience: '4–5 yrs', location: 'Hyderabad' },
     { title: 'Drug Safety Associate', experience: '1–3 yrs', location: 'Hyderabad' },
     { title: 'Signal Detection Analyst', experience: '3–5 yrs', location: 'Remote' },
     { title: 'Aggregate Report Specialist', experience: '2+ yrs', location: 'Hyderabad' },
