@@ -2,7 +2,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, HostListener,PLATFORM_ID, Inject,  } from '@angular/core';
 import { RouterModule } from '@angular/router';
 declare var bootstrap: any;
-
+import Dropdown from 'bootstrap/js/dist/dropdown.js';
+import Collapse from 'bootstrap/js/dist/collapse.js';
 @Component({
   selector: 'app-header',
   imports: [
@@ -19,11 +20,14 @@ export class HeaderComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
  async ngAfterViewInit(): Promise<void> {
     if (isPlatformBrowser(this.platformId)) {
-      const Dropdown = (await import('bootstrap/js/dist/dropdown')).default;
+      // const Dropdown = (await import('bootstrap/js/dist/dropdown')).default;
 
       document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach((el) => {
         new Dropdown(el);
       });
+       document
+    .querySelectorAll<HTMLElement>('.navbar-collapse')
+    .forEach((el) => new Collapse(el, { toggle: false }));
     }
   }
  

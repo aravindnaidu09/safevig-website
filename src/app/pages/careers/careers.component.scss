@@ -1,3 +1,4 @@
+@use "sass:color";
 .careers-section {
   background-color: #f4f7fa;
 
@@ -62,7 +63,7 @@
     color: #fff;
     font-weight: 600;
     &:hover {
-      background-color: darken(#132c63, 10%);
+       background-color: color.adjust(#132c63, $lightness: -10%);
     }
   }
 }

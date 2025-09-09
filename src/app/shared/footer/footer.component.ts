@@ -1,5 +1,5 @@
-import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +9,13 @@ import { Router } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements AfterViewInit {
-  constructor(private router: Router,
-    private renderer: Renderer2, private el: ElementRef,@Inject(PLATFORM_ID) private platformId: Object
-  ) { }
+  private readonly router = inject(Router);
+private platformId = inject(PLATFORM_ID);
+ private readonly elRef: ElementRef<HTMLElement> = inject(ElementRef);
+  private readonly renderer = inject(Renderer2);
+
+  // Optional: access document if you need it
+  private readonly document = inject(DOCUMENT);
 
  ngAfterViewInit(): void {
   if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
@@ -52,3 +56,7 @@ export class FooterComponent implements AfterViewInit {
 
 
 }
+function Inject(PLATFORM_ID: any): (target: typeof FooterComponent, propertyKey: undefined, parameterIndex: 3) => void {
+  throw new Error('Function not implemented.');
+}
+
