@@ -1,0 +1,24 @@
+{
+  "updatedUtc": "2025-09-09T12:00:00Z",
+  "items": [
+    {
+      "id": "safevig-natco-2025-09-08",
+      "title": "SafeVig Partners with NATCO Pharma for Medical Information Call Centre Operations",
+      "name": "SafeVig partners with NATCO",
+      "publishedOn": "2025-09-08",
+      "client": {
+        "name": "NATCO Pharma",
+        "logoUrl": "assets/ClientsLogo/Nacto.png",
+        "siteUrl": "https://www.natcopharma.co.in/"
+      },
+      "heroImageUrl": "assets/Logos/Safevig_LOGO.png",
+      "summary": "SafeVig announces a strategic partnership with NATCO Pharma to strengthen Medical Information Call Centre (MICC) operations, ensuring timely and compliant medical information services.",
+      "content": [
+        "Hyderabad, India — September 08, 2025 — SafeVig Solutions Pvt. Ltd., a leading provider of Pharmacovigilance and Medical Information solutions, announced its strategic partnership with NATCO Pharma Limited, a global leader in specialty and oncology medicines.",
+        "Through this collaboration, SafeVig will support NATCO’s Medical Information Call Centre (MICC) operations, ensuring healthcare professionals and patients receive high-quality, compliant medical information services.",
+        "“We are delighted to partner with NATCO Pharma in advancing patient safety and medical communication,” said Sridivya Palacharla, CEO & Co-Founder, SafeVig. This partnership reflects our shared commitment to excellence, innovation, and improving healthcare outcomes."
+      ],
+      "tags": ["Partnership", "Medical Information", "Pharma", "MICC"]
+    }
+  ]
+}

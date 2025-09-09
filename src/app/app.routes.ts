@@ -20,6 +20,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { BaBeComponent } from './pages/ba-be/ba-be.component';
+import PressReleaseListComponent from './pages/press/press-release-list.component';
+import PressReleaseDetailComponent from './pages/press/press-release-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,7 +43,8 @@ export const routes: Routes = [
   {path:'ALL-PROD', component: ProductsComponent},
   {path:'ALL-SERV', component: ServicesComponent},
   {path:'ALL-ABTS', component: AboutUsComponent},
-
+ { path: 'press-release', component:PressReleaseListComponent},
+  { path: 'press-release/:id', component:PressReleaseDetailComponent},
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'careers', component: CareersComponent },
   { path: 'contact-us', component: ContactUsComponent },

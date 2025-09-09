@@ -1,0 +1,43 @@
+$brand: #132c63;
+$muted: #808080;
+
+.press-wrap {
+  .title { color: $brand; font-weight: 700; letter-spacing: .3px; }
+  .sub   { color: $muted; }
+
+  .filters {
+    margin-top: .5rem;
+    .form-label { color: $brand; font-weight: 600; }
+  }
+
+  .state { color: $muted; &.muted { color: $muted; } }
+
+  .release-card {
+    border: 1px solid rgba(19,44,99,.08);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(19,44,99,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(19,44,99,.12);
+    }
+
+    .client {
+      .logo { width: 28px; height: 28px; object-fit: contain; }
+      .client-name { font-weight: 600; color: $brand; text-decoration: none; }
+    }
+    .card-title { font-size: 1.05rem; font-weight: 700; color: $brand; }
+    .date { font-size: .875rem; color: $muted; margin-bottom: .25rem; }
+    .summary { color: #3a3a3a; }
+
+    .btn-primary {
+      background: $brand; border-color: $brand; border-radius: 999px; padding-inline: 1rem;
+    }
+
+    .tags .tag {
+      font-size: .75rem; color: $muted; border: 1px solid rgba(0,0,0,.08);
+      padding: .1rem .5rem; border-radius: 999px; margin-left: .25rem;
+    }
+  }
+}

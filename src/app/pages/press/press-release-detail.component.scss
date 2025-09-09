@@ -1,0 +1,60 @@
+$brand: #132c63;
+$muted: #808080;
+$ink: #1a1a1a;
+
+.press-detail {
+    .heroLogoHeightlogo{height: 1rem;}
+  .back-link { color: $brand; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .head {
+    .logo { width: 56px; height: 56px; object-fit: contain; filter: saturate(1.1); }
+    .title { margin: 0; color: $brand; font-weight: 800; letter-spacing: .3px; font-size: 1.25rem; }
+    .sub { margin: .25rem 0 0; color: $ink; font-weight: 700; line-height: 1.35; font-size: 1.15rem; color: $brand; }
+    .meta {
+      margin-top: .35rem; font-size: .9rem; color: $muted;
+      .sep { margin: 0 .35rem; color: rgba(0,0,0,.25); }
+      .visit { margin-left: .65rem; color: $brand; font-weight: 600; text-decoration: none; }
+    }
+  }
+
+  .card-like {
+    background: #fff;
+    border: 1px solid rgba(19,44,99,.08);
+    border-radius: 1rem;
+    padding: 1.25rem 1.25rem;
+    box-shadow: 0 8px 24px rgba(19,44,99,.06);
+  }
+
+  .content {
+    .para { color: #2a2a2a; line-height: 1.75; margin-bottom: 1rem; }
+  }
+
+  .about {
+    .sec-hdr { color: $brand; font-weight: 800; margin-bottom: .35rem; }
+    .para { color: #2f2f2f; }
+  }
+
+  .signature {
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(90deg, rgba(19,44,99,.06), rgba(19,44,99,.02));
+    .sig-left { color: $muted; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .sig-right { color: $brand; font-weight: 800; }
+  }
+
+  .side {
+    top: 96px; // sticky offset below header
+    .side-card {
+      .side-hdr { color: $brand; font-weight: 800; margin-bottom: .75rem; }
+      .kv { display: flex; justify-content: space-between; margin-bottom: .5rem;
+        span:first-child { color: $muted; }
+        span:last-child { color: $ink; font-weight: 600; }
+      }
+      .tags .tag {
+        display: inline-block; font-size: .75rem; color: $muted;
+        border: 1px solid rgba(0,0,0,.08); padding: .15rem .5rem; border-radius: 999px;
+        margin-right: .25rem;
+      }
+      .mc-name { font-weight: 700; color: $ink; }
+      .mc-line a { color: $brand; text-decoration: none; }
+    }
+  }
+}

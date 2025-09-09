@@ -1,0 +1,94 @@
+<!-- If item exists, render as `it`; otherwise show empty state -->
+<section class="press-detail container py-4" *ngIf="item as it; else emptyState">
+  <!-- breadcrumb/back -->
+  <section class="crumbs mb-3">
+    <a (click)="back()" class="back-link">&larr; Back to Press Release</a>
+  </section>
+
+  <!-- page header -->
+  <section class="head d-flex align-items-center gap-3 mb-4">
+    <section class="brand-mark">
+      <img
+        [src]="(it.client.logoUrl || 'assets/logos/dummy-client.svg')"
+        class="logo"
+        alt="Client logo"
+        (error)="onImgError($event)"
+      />
+    </section>
+    <section class="titles">
+      <h1 class="title">Press Release</h1>
+      <h2 class="sub">{{ it.title }}</h2>
+      <section class="meta">
+        <span class="client">{{ it.client.name || '—' }}</span>
+        <span class="sep">·</span>
+        <span class="date">{{ it.publishedOn | date:'longDate' }}</span>
+        <a *ngIf="it.client?.siteUrl" [href]="it.client.siteUrl" target="_blank" rel="noopener" class="visit">Visit client site</a>
+      </section>
+    </section>
+  </section>
+
+  <!-- body -->
+  <section class="row g-4">
+    <!-- left: content -->
+    <section class="col-lg-8">
+      <section class="hero mb-3" *ngIf="it.heroImageUrl">
+        <img [src]="it.heroImageUrl" alt="Hero image" class="img-fluid rounded-4 shadow-sm heroLogoHeightlogo" (error)="onImgError($event)" />
+      </section>
+
+      <section class="content card-like">
+        <section class="para" *ngFor="let p of it.content">{{ p }}</section>
+      </section>
+
+      <!-- COMMON STATIC: About SafeVig (always visible) -->
+      <section class="about card-like mt-4">
+        <h3 class="sec-hdr">About SafeVig Solutions Pvt. Ltd.</h3>
+        <section class="para">
+          SafeVig is a specialized provider of Pharmacovigilance, Medical Information, and Risk Management services,
+          offering scalable solutions to pharmaceutical and biotechnology companies worldwide. With a focus on compliance,
+          efficiency, and patient-centric systems, SafeVig supports its partners in achieving regulatory excellence while
+          improving healthcare outcomes.
+        </section>
+      </section>
+
+      <!-- brand signature strip -->
+      <section class="signature card-like mt-4">
+        <section class="sig-left">SOLUTIONS PVT LTD</section>
+        <section class="sig-right">Creating Impact</section>
+      </section>
+    </section>
+
+    <!-- right: sticky meta + contact -->
+    <section class="col-lg-4">
+      <section class="side sticky-top">
+        <section class="side-card card-like">
+          <h4 class="side-hdr">Release Info</h4>
+          <section class="kv"><span>Published</span><span>{{ it.publishedOn | date:'longDate' }}</span></section>
+          <section class="kv" *ngIf="it.client?.name"><span>Client</span><span>{{ it.client.name }}</span></section>
+          <section class="kv" *ngIf="it.tags?.length">
+            <span>Tags</span>
+            <span class="tags">
+              <span class="tag" *ngFor="let t of it.tags">{{ t }}</span>
+            </span>
+          </section>
+        </section>
+
+        <!-- COMMON STATIC: Media Contact -->
+        <section class="side-card card-like mt-3">
+          <h4 class="side-hdr">Media Contact</h4>
+          <section class="mc-name">SafeVig Solutions Pvt. Ltd.</section>
+          <section class="mc-line">
+            <a href="mailto:support@safevigsolutions.com">{{'support@safevigsolutions.com'}}</a>
+          </section>
+          <section class="mc-line">
+            <a href="https://www.safevigsolutions.com" target="_blank" rel="noopener">www.safevigsolutions.com</a>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<!-- empty state -->
+<ng-template #emptyState>
+  <section class="container py-5 text-center text-muted">No content.</section>
+</ng-template>
