@@ -243,8 +243,13 @@
   </div>
 </section>
 
-  <section class="cta-section text-center py-4">
-      <h3 class="mb-3">Streamline your PV agreements lifecycle with SafeVig Digital Agreements</h3>
-      <p class="lead mb-3">Achieve compliance, efficiency, and peace of mind — all in one platform.</p>
-      <a routerLink="/contact" class="btn btn-primary btn-lg px-5">Request a Demo</a>
-    </section>
+    <section class="py-1">
+  <app-cta-banner
+    [title]="'Streamline your PV agreements lifecycle with SafeVig Digital Agreements'"
+    [subtitle]="'Achieve compliance, efficiency, and peace of mind — all in one platform.'"
+    [logoSrc]="'../../../../assets/Icons/ProductLogo/Agreements.svg'"
+    [logoAlt]="'Agreements Product Logo'"
+    [productName]="'SafeVig Agreements'"
+    [buttonLabel]="'Request a Demo'">
+  </app-cta-banner>
+</section>

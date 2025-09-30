@@ -115,8 +115,13 @@
   </div>
 </section>
 
-  <section class="cta-section text-center py-4">
-      <h3 class="mb-3">Empowering Safety with SafeVig Signal</h3>
-      <p class="lead mb-3"> Achieve excellence in pharmacovigilance with automated signal detection, real-time analytics, and regulatory-ready features.</p>
-      <a routerLink="/contact" class="btn btn-primary btn-lg px-5">Request a Demo</a>
-    </section>
+ <section class="py-1">
+  <app-cta-banner
+    [title]="'Safevig Signal'"
+    [subtitle]="'Advanced Signal Detection & Risk Management'"
+    [logoSrc]="'../../../../assets/Icons/ProductLogo/Signal.svg'"
+    [logoAlt]="'signal Product Logo'"
+    [productName]="'SafeVig Signal'"
+    [buttonLabel]="'Request a Demo'">
+  </app-cta-banner>
+</section>

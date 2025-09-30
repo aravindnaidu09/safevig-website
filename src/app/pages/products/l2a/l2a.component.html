@@ -115,12 +115,14 @@
   </div>
 </section>
 
-<section class="l2a-cta py-4">
-  <div class="container text-center">
-    <h3 class="text-white mb-3">Empowering Pharmacovigilance with SafeVig L2A Monitoring</h3>
-    <p class="lead text-white mb-4">
-      Modernize your safety signal management for speed, accuracy, and regulatory excellence.
-    </p>
-    <a routerLink="/contact-us" class="btn btn-light btn-lg px-4 py-2 fw-semibold rounded-pill shadow-sm">Contact Us</a>
-  </div>
+
+<section class="py-1">
+  <app-cta-banner
+    [title]="'Empowering Pharmacovigilance with SafeVig L2A Monitoring'"
+    [subtitle]="'Modernize your safety signal management for speed, accuracy, and regulatory excellence.'"
+    [logoSrc]="'../../../../assets/Icons/ProductLogo/L2A Monitoring.svg'"
+    [logoAlt]="'L2A Logo'"
+    [productName]="'SafeVig L2A Monitoring'"
+    [buttonLabel]="'Request a Demo'">
+  </app-cta-banner>
 </section>

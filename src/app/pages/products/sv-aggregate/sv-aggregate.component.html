@@ -115,12 +115,13 @@
   </div>
 </section>
 
-<section class="aggregate-cta py-4">
-  <div class="container text-center">
-    <h3 class="text-white mb-3">Empowering Pharmacovigilance with SafeVig Aggregate Reports</h3>
-    <p class="lead text-white mb-4">
-      Automate your aggregate reporting lifecycle—boosting compliance, insights, and team productivity.
-    </p>
-    <a routerLink="/contact-us" class="btn btn-light btn-lg px-4 py-2 fw-semibold rounded-pill shadow-sm">Contact Us</a>
-  </div>
+<section class="py-1">
+  <app-cta-banner
+    [title]="'Empowering Pharmacovigilance with SafeVig Aggregate Reports'"
+    [subtitle]="'Automate your aggregate reporting lifecycle—boosting compliance, insights, and team productivity.'"
+    [logoSrc]="'../../../../assets/Icons/ProductLogo/Reports.svg'"
+    [logoAlt]="'Aggregate Product Logo'"
+    [productName]="'SafeVig Aggregate Reports'"
+    [buttonLabel]="'Request a Demo'">
+  </app-cta-banner>
 </section>

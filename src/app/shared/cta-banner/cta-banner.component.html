@@ -1,0 +1,84 @@
+<section class="cta-wrap" aria-labelledby="ctaTitle">
+  <section class="cta-inner container text-center py-2">
+    <section class="logo-line mb-3" *ngIf="logoSrc">
+      <a class="logo-link" aria-label="Go to product page">
+        <img [src]="logoSrc" [alt]="logoAlt" loading="lazy" />
+      </a>
+    </section>
+
+    <section class="text-block">
+      <h3 id="ctaTitle" class="mb-2">{{ title }}</h3>
+      <p class="lead mb-4">
+        {{ subtitle === 'Help me in content'
+            ? 'Streamline case workflows and increase data quality—automatically.'
+            : subtitle }}
+      </p>
+    </section>
+
+    <section class="actions">
+      <button type="button" class="btn btn-pill btn-lg px-5" (click)="openModal()">
+        {{ buttonLabel }}
+      </button>
+    </section>
+  </section>
+</section>
+
+<!-- Modal -->
+<section class="modal-backdrop" *ngIf="showModal()" (click)="closeModal()" aria-hidden="true"></section>
+
+<section class="modal-sheet" *ngIf="showModal()" role="dialog" aria-modal="true"
+         aria-labelledby="demoTitle" aria-describedby="demoDesc">
+  <section class="modal-card" (click)="$event.stopPropagation()">
+    <header class="modal-head">
+      <h4 id="demoTitle" class="m-0">{{productName}} - Request a Demo</h4>
+      <button type="button" class="icon-btn" (click)="closeModal()" aria-label="Close">&times;</button>
+    </header>
+
+    <!-- make body scroll independently; footer stays visible -->
+    <section id="demoDesc" class="modal-body">
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <section class="form-control">
+          <section class="form-row">
+            <label>Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Your name" />
+            <small class="err" *ngIf="hasError('name','required')">Name is required.</small>
+            <small class="err" *ngIf="hasError('name','minlength')">Minimum 2 characters.</small>
+          </section>
+
+          <section class="form-row">
+            <label>Email</label>
+            <input type="email" formControlName="email" class="form-control" placeholder="you@company.com" />
+            <small class="err" *ngIf="hasError('email','required')">Email is required.</small>
+            <small class="err" *ngIf="hasError('email','email')">Enter a valid email.</small>
+          </section>
+
+          <section class="form-row">
+            <label>Phone</label>
+            <input type="tel" formControlName="phone" class="form-control" placeholder="phone" />
+          </section>
+
+          <!-- <section class="form-row">
+            <label>Product</label>
+            <input type="text" formControlName="product" class="form-control" placeholder="" />
+          </section> -->
+
+          <section class="form-row span-2">
+            <label>Message</label>
+            <textarea rows="4" formControlName="message" class="form-control" placeholder="Tell us what you need"></textarea>
+          </section>
+        </section>
+
+        <section class="alert alert-success mt-2" *ngIf="sent()">Thanks! We’ll get back to you shortly.</section>
+        <section class="alert alert-danger  mt-2" *ngIf="error()">{{ error() }}</section>
+      </form>
+    </section>
+
+    <footer class="modal-foot">
+      <button type="button" class="btn btn-outline me-2" (click)="closeModal()">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="loading()" (click)="submit()">
+        <span class="spinner-border spinner-border-sm me-2" *ngIf="loading()"></span>
+        Send
+      </button>
+    </footer>
+  </section>
+</section>

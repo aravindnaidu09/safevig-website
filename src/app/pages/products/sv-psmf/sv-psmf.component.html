@@ -115,12 +115,14 @@
   </div>
 </section>
 
-<section class="psmf-cta py-4">
-  <div class="container text-center">
-    <h3 class="text-white mb-3">Enhance Your Pharmacovigilance with SafeVig PSMF</h3>
-    <p class="lead text-white mb-4">
-      Transform compliance, accuracy, and collaboration in PSMF management—automatically.
-    </p>
-    <a routerLink="/contact-us" class="btn btn-light btn-lg px-4 py-2 fw-semibold rounded-pill shadow-sm">Contact Us</a>
-  </div>
+
+<section class="py-1">
+  <app-cta-banner
+    [title]="'Enhance Your Pharmacovigilance with SafeVig PSMF'"
+    [subtitle]="'Transform compliance, accuracy, and collaboration in PSMF management—automatically.'"
+    [logoSrc]="'../../../../assets/Icons/ProductLogo/PSMF.svg'"
+    [logoAlt]="'PSMF Product Logo'"
+    [productName]="'SafeVig PSMF'"
+    [buttonLabel]="'Request a Demo'">
+  </app-cta-banner>
 </section>

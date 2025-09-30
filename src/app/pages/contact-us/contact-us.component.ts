@@ -24,7 +24,8 @@ export class ContactUsComponent {
     email: '',
     phone: '',
     message: ''
-  }; isSubmitting = false;
+  }; 
+  isSubmitting = false;
   successMessage = '';
   errorMessage = '';
 private fb = inject(FormBuilder);
