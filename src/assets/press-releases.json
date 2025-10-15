@@ -1,5 +1,5 @@
 {
-  "updatedUtc": "2025-09-09T12:00:00Z",
+  "updatedUtc": "2025-10-15T12:00:00Z",
   "items": [
     {
       "id": "safevig-natco-2025-09-08",
@@ -19,6 +19,31 @@
         "“We are delighted to partner with NATCO Pharma in advancing patient safety and medical communication,” said Sridivya Palacharla, CEO & Co-Founder, SafeVig. This partnership reflects our shared commitment to excellence, innovation, and improving healthcare outcomes."
       ],
       "tags": ["Partnership", "Medical Information", "Pharma", "MICC"]
+    },
+    {
+      "id": "safevig-us-launch-cary-nc-2025",
+      "title": "SAFEVIG SOLUTIONS LLC Launches U.S. Operations in North Carolina to Advance Intelligent Life Sciences Solutions",
+      "name": "SafeVig launches U.S. operations (Cary, NC)",
+      "publishedOn": "2025-10-14",
+      "client": {
+        "name": "SAFEVIG SOLUTIONS LLC",
+        "logoUrl": "assets/logos/safevig-logo.png",
+        "siteUrl": "https://www.safevigsolutions.com"
+      },
+      "heroImageUrl": "assets/logos/safevig-logo.png",
+      "summary": "SAFEVIG SOLUTIONS LLC announced the official launch of its U.S. operations with a new headquarters in Cary, North Carolina, strengthening AI-driven innovation in patient safety and regulatory operations.",
+      "content": [
+        "Cary, North Carolina — October 14, 2025 — SAFEVIG SOLUTIONS LLC, a global provider of intelligent, technology-driven solutions for the life sciences industry, today announced the official launch of its U.S. operations with the establishment of its new headquarters in Cary, North Carolina. This strategic expansion marks a major milestone in SafeVig’s global growth journey and reinforces its commitment to advancing patient safety, regulatory compliance, and digital transformation in the life sciences sector.",
+        "Formed under the General Statutes of North Carolina, the new U.S. entity will serve as SafeVig’s North American hub, strengthening its ability to partner with pharmaceutical, biotechnology, and medical device companies to optimize pharmacovigilance, regulatory, and clinical operations.",
+        "SAFEVIG SOLUTIONS LLC is part of a global Techno-Functional organization focused on transforming complex safety and regulatory workflows through advanced automation and intelligent technologies. By leveraging Artificial Intelligence (AI), Machine Learning (ML), and data-driven automation, SafeVig enables life sciences organizations to streamline pharmacovigilance and regulatory reporting processes, enhance data accuracy and compliance, reduce operational burden and turnaround time, and drive proactive, patient-centric safety outcomes.",
+        "With a strong foundation in pharmacovigilance, clinical research, and digital transformation, SafeVig delivers end-to-end, compliant, and scalable solutions designed to meet the evolving global regulatory landscape.",
+        "“Establishing our U.S. presence in North Carolina is a crucial milestone in SafeVig’s mission to bring intelligent, data-driven solutions to a global clientele,” said Sridivya P, CEO & Co-Founder of SafeVig Solutions. “This expansion strengthens our ability to deliver end-to-end digital services that enhance patient safety, accelerate regulatory compliance, and empower our partners to lead innovation across the life sciences value chain.”",
+        "The U.S. launch is a key component of SafeVig’s vision to become a global benchmark for intelligent life sciences solutions — combining domain expertise, advanced technology, and regulatory intelligence to help clients reimagine safety and compliance management in a rapidly evolving industry.",
+        "About SAFEVIG SOLUTIONS LLC: Headquartered in Cary, North Carolina, SafeVig is part of a global Techno-Functional organization delivering next-generation, technology-enabled services for the pharmaceutical, biotechnology, and life sciences sectors. SafeVig specializes in pharmacovigilance, clinical research, regulatory operations, and digital transformation, leveraging AI, ML, and automation to enhance operational efficiency, ensure compliance, and support safer healthcare practices worldwide.",
+        "For more information, visit www.safevigsolutions.com or contact info@safevigsolutions.com."
+      ],
+      "tags": ["Expansion", "U.S. Launch", "AI", "Pharmacovigilance", "Regulatory", "Life Sciences"]
     }
+    
   ]
 }
