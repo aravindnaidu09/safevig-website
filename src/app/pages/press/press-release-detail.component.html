@@ -1,5 +1,5 @@
 <!-- If item exists, render as `it`; otherwise show empty state -->
-<section class="press-detail container py-4" *ngIf="item as it; else emptyState">
+<section class="press-detail container py-4" *ngIf="!prs.loading() && it() as item else emptyState">
   <!-- breadcrumb/back -->
   <section class="crumbs mb-3">
     <a (click)="back()" class="back-link">&larr; Back to Press Release</a>
@@ -9,7 +9,7 @@
   <section class="head d-flex align-items-center gap-3 mb-4">
     <section class="brand-mark">
       <img
-        [src]="(it.client.logoUrl || 'assets/logos/dummy-client.svg')"
+        [src]="(item.client.logoUrl || 'assets/logos/dummy-client.svg')"
         class="logo"
         alt="Client logo"
         (error)="onImgError($event)"
@@ -17,12 +17,12 @@
     </section>
     <section class="titles">
       <h1 class="title">Press Release</h1>
-      <h2 class="sub">{{ it.title }}</h2>
+      <h2 class="sub">{{ item.title }}</h2>
       <section class="meta">
-        <span class="client">{{ it.client.name || '—' }}</span>
+        <span class="client">{{ item.client.name || '—' }}</span>
         <span class="sep">·</span>
-        <span class="date">{{ it.publishedOn | date:'longDate' }}</span>
-        <a *ngIf="it.client?.siteUrl" [href]="it.client.siteUrl" target="_blank" rel="noopener" class="visit">Visit client site</a>
+        <span class="date">{{ item.publishedOn | date:'longDate' }}</span>
+        <a *ngIf="item.client?.siteUrl" [href]="item.client.siteUrl" target="_blank" rel="noopener" class="visit">Visit client site</a>
       </section>
     </section>
   </section>
@@ -31,12 +31,12 @@
   <section class="row g-4">
     <!-- left: content -->
     <section class="col-lg-8">
-      <section class="hero mb-3" *ngIf="it.heroImageUrl">
-        <img [src]="it.heroImageUrl" alt="Hero image" class="img-fluid rounded-4 shadow-sm heroLogoHeightlogo" (error)="onImgError($event)" />
+      <section class="hero mb-3" *ngIf="item.heroImageUrl">
+        <img [src]="item.heroImageUrl" alt="Hero image" class="img-fluid rounded-4 shadow-sm heroLogoHeightlogo" (error)="onImgError($event)" />
       </section>
 
       <section class="content card-like">
-        <section class="para" *ngFor="let p of it.content">{{ p }}</section>
+        <section class="para" *ngFor="let p of item.content">{{ p }}</section>
       </section>
 
       <!-- COMMON STATIC: About SafeVig (always visible) -->
@@ -52,7 +52,7 @@
 
       <!-- brand signature strip -->
       <section class="signature card-like mt-4">
-        <section class="sig-left">SOLUTIONS PVT LTD</section>
+        <section class="sig-left">SafeVig SOLUTIONS PVT LTD</section>
         <section class="sig-right">Creating Impact</section>
       </section>
     </section>
@@ -62,12 +62,12 @@
       <section class="side sticky-top">
         <section class="side-card card-like">
           <h4 class="side-hdr">Release Info</h4>
-          <section class="kv"><span>Published</span><span>{{ it.publishedOn | date:'longDate' }}</span></section>
-          <section class="kv" *ngIf="it.client?.name"><span>Client</span><span>{{ it.client.name }}</span></section>
-          <section class="kv" *ngIf="it.tags?.length">
+          <section class="kv"><span>Published</span><span>{{ item.publishedOn | date:'longDate' }}</span></section>
+          <section class="kv" *ngIf="item.client?.name"><span>Client</span><span>{{ item.client.name }}</span></section>
+          <section class="kv" *ngIf="item.tags?.length">
             <span>Tags</span>
             <span class="tags">
-              <span class="tag" *ngFor="let t of it.tags">{{ t }}</span>
+              <span class="tag" *ngFor="let t of item.tags">{{ t }}</span>
             </span>
           </section>
         </section>
@@ -90,5 +90,7 @@
 
 <!-- empty state -->
 <ng-template #emptyState>
-  <section class="container py-5 text-center text-muted">No content.</section>
+ <section class="py-5 text-center text-muted" *ngIf="prs.loaded() && !prs.loading()">
+      No content.
+    </section>
 </ng-template>

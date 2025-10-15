@@ -8,28 +8,46 @@ export class PressReleaseService {
 
   private _all = signal<PressRelease[]>([]);
   private _loading = signal<boolean>(false);
+  private _loaded = signal<boolean>(false);
   private _error = signal<string | null>(null);
 
   readonly all = computed(() => this._all());
   readonly loading = computed(() => this._loading());
+    readonly loaded = computed(() => this._loaded());
   readonly error = computed(() => this._error());
 
   constructor(private http: HttpClient) {}
-
-  load(): void {
+ loadOnce(): void {
+    if (this._loaded() || this._loading()) return;
     this._loading.set(true);
     this.http.get<PressReleaseFile>(this.path).subscribe({
       next: (f) => {
         this._all.set(f?.items ?? []);
         this._loading.set(false);
+        this._loaded.set(true);
       },
       error: (e) => {
         this._error.set('Unable to load press releases.');
         this._loading.set(false);
+        this._loaded.set(false);
         console.error(e);
       }
     });
   }
+  // load(): void {
+  //   this._loading.set(true);
+  //   this.http.get<PressReleaseFile>(this.path).subscribe({
+  //     next: (f) => {
+  //       this._all.set(f?.items ?? []);
+  //       this._loading.set(false);
+  //     },
+  //     error: (e) => {
+  //       this._error.set('Unable to load press releases.');
+  //       this._loading.set(false);
+  //       console.error(e);
+  //     }
+  //   });
+  // }
 
   getById(id: string): PressRelease | undefined {
     return this._all().find(i => i.id === id);

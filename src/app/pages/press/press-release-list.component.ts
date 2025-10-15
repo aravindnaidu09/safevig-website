@@ -1,9 +1,11 @@
-import { Component, OnInit, computed, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PressReleaseService } from '../../services/press-release.service';
 import { PressRelease } from '../../model/press-release.model';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -14,14 +16,19 @@ import { PressRelease } from '../../model/press-release.model';
 })
 export default class PressReleaseListComponent implements OnInit {
   // filters
+ private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  prs = inject(PressReleaseService);
+
+
   from = signal<string>('');
   to = signal<string>('');
   q = signal<string>('');
 
-  constructor(public prs: PressReleaseService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.prs.load();
+    this.prs.loadOnce();
   }
 
   readonly filtered = computed<PressRelease[]>(() => {
