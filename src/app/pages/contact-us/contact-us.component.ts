@@ -12,6 +12,8 @@ interface ContactForm {
   phone: string;
   message: string;
 }
+type OfficeKey = 'india' | 'usa';
+                          
 @Component({
   selector: 'app-contact-us',
   imports: [CommonModule,FormsModule,ReactiveFormsModule],
@@ -19,6 +21,7 @@ interface ContactForm {
   styleUrl: './contact-us.component.scss'
 })
 export class ContactUsComponent {
+  activeOffice: OfficeKey = 'india';
   contact: ContactForm = {
     name: '',
     email: '',
@@ -28,6 +31,9 @@ export class ContactUsComponent {
   isSubmitting = false;
   successMessage = '';
   errorMessage = '';
+   setOffice(key: OfficeKey): void {
+    this.activeOffice = key;
+  }
 private fb = inject(FormBuilder);
   private http = inject(HttpClient);
   contactForm = this.fb.group({

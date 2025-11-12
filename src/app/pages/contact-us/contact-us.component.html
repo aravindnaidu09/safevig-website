@@ -1,18 +1,105 @@
 <section class="contact-us-section py-5">
-  <div class="container">
-    <div class="row g-4">
-      <!-- Map -->
-      <section class="col-md-6 map-section rounded shadow-sm overflow-hidden">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.539708569682!2d78.38726757507745!3d17.43693348338717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e9179e9e81%3A0x5c6bc6fe2fce647!2sHiTech%20City%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1683638296922!5m2!1sen!2sin"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+  <section class="container">
+    <section class="row g-4 align-items-stretch">
+
+      <!-- Left: Offices + Map -->
+      <section class="col-lg-6">
+        <section class="office-card h-100 rounded-4 shadow-sm p-3 p-md-4">
+
+          <section class="d-flex justify-content-between align-items-center mb-3">
+            <section>
+              <h2 class="section-title mb-1">Our Offices</h2>
+              <p class="section-subtitle mb-0">
+                Reach SafeVig from any of our global locations.
+              </p>
+            </section>
+          </section>
+
+          <!-- Office Tabs -->
+          <section class="office-tabs">
+            <ul class="nav nav-pills mb-3" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  type="button"
+                  class="nav-link"
+                  [class.active]="activeOffice === 'india'"
+                  (click)="setOffice('india')">
+                  India HQ
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  type="button"
+                  class="nav-link"
+                  [class.active]="activeOffice === 'usa'"
+                  (click)="setOffice('usa')">
+                  USA Office
+                </button>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Office Address Details -->
+          <section class="office-details mb-3">
+            <section *ngIf="activeOffice === 'india'">
+              <h3 class="office-title mb-1">SafeVig Solutions Pvt. Ltd.</h3>
+              <p class="office-location-label mb-1">
+                <i class="fa fa-map-marker-alt me-1"></i> Hyderabad, India
+              </p>
+              <p class="office-address mb-0">
+                Second Floor, Sri Sai Sudha Sadan,<br>
+                SafeVig Solutions Pvt. Limited,<br>
+                215, Kavuri Hills Road, Kavuri Hills,<br>
+                Madhapur, Hyderabad, Telangana 500033, India
+              </p>
+            </section>
+
+            <section *ngIf="activeOffice === 'usa'">
+              <h3 class="office-title mb-1">SafeVig Solutions LLC</h3>
+              <p class="office-location-label mb-1">
+                <i class="fa fa-map-marker-alt me-1"></i> Raleigh–Durham, North Carolina, USA
+              </p>
+              <p class="office-address mb-0">
+                SafeVig Solutions LLC,<br>
+                Raleigh–Durham Area,<br>
+                North Carolina, USA
+              </p>
+            </section>
+          </section>
+
+          <!-- Map -->
+          <section class="map-wrapper rounded-4 overflow-hidden">
+            <!-- India Map -->
+            <section *ngIf="activeOffice === 'india'" class="map-frame">
+              <iframe
+                src="https://www.google.com/maps?q=Second+Floor,+Sri+Sai+Sudha+Sadan,+Safevig+solutions+pvt+limited,+215,+Kavuri+Hills+Rd,+Kavuri+Hills,+Madhapur,+Hyderabad,+Telangana+500033&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </section>
+
+            <!-- USA Map -->
+            <section *ngIf="activeOffice === 'usa'" class="map-frame">
+              <!-- <iframe
+                src="https://www.google.com/maps?q=SAFEVIG+SOLUTIONS+LLC,+Raleigh-Durham,+North+Carolina,+USA&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe> -->
+            </section>
+          </section>
+
+        </section>
       </section>
 
-      <!-- Contact Form -->
-      <section class="col-md-6 form-section rounded shadow-sm">
-        <h3 class="section-title mb-4">Contact Us</h3>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Right: Contact Form -->
+      <section class="col-lg-6">
+        <section class="contact-card h-100 rounded-4 shadow-sm p-3 p-md-4">
+          <h2 class="section-title mb-2">Contact Us</h2>
+          <p class="section-subtitle mb-4">
+            Share your requirements and our team will connect with you shortly.
+          </p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
 
           <!-- Full Name -->
           <div class="mb-3">
@@ -61,7 +148,9 @@
             Send Message
           </button>
         </form>
+        </section>
       </section>
-    </div>
-  </div>
+
+    </section>
+  </section>
 </section>
