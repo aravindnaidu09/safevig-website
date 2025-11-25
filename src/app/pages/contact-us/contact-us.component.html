@@ -55,16 +55,17 @@
             </section>
 
             <section *ngIf="activeOffice === 'usa'">
-              <h3 class="office-title mb-1">SafeVig Solutions LLC</h3>
-              <p class="office-location-label mb-1">
-                <i class="fa fa-map-marker-alt me-1"></i> Raleigh–Durham, North Carolina, USA
-              </p>
-              <p class="office-address mb-0">
-                SafeVig Solutions LLC,<br>
-                Raleigh–Durham Area,<br>
-                North Carolina, USA
-              </p>
-            </section>
+  <h3 class="office-title mb-1">SafeVig Solutions LLC</h3>
+  <p class="office-location-label mb-1">
+    <i class="fa fa-map-marker-alt me-1"></i> Cary, North Carolina, USA
+  </p>
+  <p class="office-address mb-0">
+    SafeVig Solutions LLC,<br>
+    Raleigh- Durham, 
+    964 High House Road,<br>
+    Cary, North Carolina 27513, USA
+  </p>
+</section>
           </section>
 
           <!-- Map -->
@@ -79,13 +80,14 @@
             </section>
 
             <!-- USA Map -->
-            <section *ngIf="activeOffice === 'usa'" class="map-frame">
-              <!-- <iframe
-                src="https://www.google.com/maps?q=SAFEVIG+SOLUTIONS+LLC,+Raleigh-Durham,+North+Carolina,+USA&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe> -->
-            </section>
+           <section *ngIf="activeOffice === 'usa'" class="map-frame">
+  <iframe
+    src="https://www.google.com/maps?q=964+High+House+Road,+Cary,+North+Carolina+27513&z=15&output=embed"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
           </section>
 
         </section>

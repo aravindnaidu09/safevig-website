@@ -19,15 +19,17 @@ import { L2aComponent } from './pages/products/l2a/l2a.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { BaBeComponent } from './pages/ba-be/ba-be.component';
+import { BaBeComponent } from './pages/services/ba-be/ba-be.component';
 import PressReleaseListComponent from './pages/press/press-release-list.component';
 import PressReleaseDetailComponent from './pages/press/press-release-detail.component';
+import { MiccComponent } from './pages/services/micc/micc.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   {path: 'home', component: HomeComponent},
   {path: 'babe', component: BaBeComponent},
   {path:'SVA', component: SvAgreementComponent},
+  { path: 'MICC', component:MiccComponent},
   {path:'SVR', component: SvAggregateComponent},
   {path:'SVP', component: SvPsmfComponent},
   {path:'SVS', component: SvSignalComponent},

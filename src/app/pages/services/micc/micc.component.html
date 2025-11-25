@@ -1,0 +1,261 @@
+<!-- ================= HERO ================= -->
+<section class="micc-hero text-white bgBlue">
+  <section class="container py-5">
+    <section class="row g-4 align-items-center">
+      <section class="col-lg-7">
+        <!-- <img src="assets/images/dummy-logo.svg" alt="MICC Logo" class="micc-logo mb-3" /> -->
+        <h1 class="display-6 fw-700 mb-3">Medical Information Contact Center (MICC)</h1>
+        <p class="lead opacity-90 mb-4">
+          Empowering compliant and patient-focused communication for global life sciences organizations.
+        </p>
+         <button
+  *ngIf="!EnableRequest"
+  type="button"
+  class="btn btn-light btn-lg me-3"
+  (click)="EnableRequest = true">
+  Learn More
+</button>
+
+<!-- Request Demo: opens custom Angular modal -->
+<button
+  *ngIf="EnableRequest"
+  type="button"
+  class="btn btn-light btn-lg me-3"
+  (click)="openDemo()">
+  Request Demo
+</button>
+      </section>
+      <section class="col-lg-5">
+        <img src="../../../../assets/Micc/Call-Cen-001.png" class="img-fluid rounded-3 shadow" alt="MICC Hero" />
+      </section>
+    </section>
+  </section>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="micc-testimonials py-4 bg-light">
+  <section class="container">
+    <h2 class="h4 fw-700 text-center text-navy mb-3">What Our Partners Say</h2>
+    <section class="tms-scroll" (mouseenter)="pauseAutoScroll()" (mouseleave)="resumeAutoScroll()">
+      <section
+        *ngFor="let t of testimonials(); let i = index"
+        class="tms-card card border-0 shadow-sm"
+        role="listitem">
+        <section class="card-body">
+          <p class="tms-quote mb-3">“{{ t.quote }}”</p>
+          <p class="fw-600 mb-1">{{ t.name }}</p>
+          <p class="small text-muted">{{ t.role }} {{ t.company ? '• ' + t.company : '' }}</p>
+          <section class="tms-stars">
+            <ng-container *ngFor="let s of [1,2,3,4,5]">
+              <span class="star" [class.filled]="s <= (t.rating || 0)">&#9733;</span>
+            </ng-container>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<!-- ================= ABOUT MICC ================= -->
+<section class="micc-about py-5">
+  <section class="container">
+    <section class="row g-4 align-items-center">
+      <section class="col-lg-6">
+        <h2 class="h3 fw-700 text-navy mb-3">About MICC</h2>
+        <p class="text-muted">
+          The SafeVig MICC provides multilingual, omnichannel support for medical inquiries, product
+          quality complaints, and adverse event reporting — ensuring scientific accuracy and global compliance.
+        </p>
+        <ul class="tick-grid">
+          <li>Validated intake and routing</li>
+          <li>24/7 multilingual response handling</li>
+          <li>Integrated with Pharmacovigilance workflows</li>
+          <li>Audit-ready dashboards and analytics</li>
+        </ul>
+      </section>
+      <section class="col-lg-6">
+        <img src="../../../../assets/Micc/Call-Cen-003.png" alt="About MICC" class="img-fluid rounded-3 shadow-sm" />
+      </section>
+    </section>
+  </section>
+</section>
+
+<!-- ================= MICC SERVICES ================= -->
+<section class="micc-services py-5 bg-soft">
+  <section class="container">
+    <h2 class="h3 fw-700 text-center text-navy mb-4">MICC Services</h2>
+    <section class="accordion modern-acc" id="miccServices">
+      <section class="accordion-item" *ngFor="let s of services; let i = index">
+        <h3 class="accordion-header" [id]="'h'+i">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#c'+i" [attr.aria-controls]="'c'+i">
+            {{ s.title }}
+          </button>
+        </h3>
+        <section [id]="'c'+i" class="accordion-collapse collapse" [class.show]="i===0"
+                 [attr.aria-labelledby]="'h'+i" data-bs-parent="#miccServices">
+          <section class="accordion-body">
+  <ul class="micc-list">
+    <li *ngFor="let item of s.items">{{ item }}</li>
+  </ul>
+</section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<!-- ================= WHY SAFEVIG ================= -->
+<section class="why-safevig py-5 text-white">
+  <section class="container">
+    <h2 class="h3 fw-700 text-center mb-4">Why SafeVig</h2>
+    <section class="row g-4">
+      <section class="col-12 col-md-6 col-lg-3" *ngFor="let card of whyCards">
+        <section class="why-box h-100">
+          <section class="why-body">
+            <h4 class="h6 fw-700 mb-2">{{ card.title }}</h4>
+            <p class="small m-0">{{ card.desc }}</p>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="micc-contact py-5 bg-light">
+  <section class="container">
+    <section class="row g-4">
+      <section class="col-lg-6">
+        <section class="contact-box h-100">
+          <h3 class="h5 fw-700 text-navy mb-3">India Office</h3>
+          <p>Second Floor, Sri Sai Sudha Sadan, SafeVig Solutions Pvt Ltd,<br>
+             215, Kavuri Hills Rd, Madhapur, Hyderabad, Telangana 500033</p>
+          <p class="small text-muted">✉ Info&#64;safevigsolutions.com | ☎ 040-29308055</p>
+        </section>
+      </section>
+      <section class="col-lg-6">
+        <section class="contact-box h-100">
+          <h3 class="h5 fw-700 text-navy mb-3">USA Office</h3>
+          <p>SAFEVIG SOLUTIONS LLC, Raleigh-Durham, North Carolina, USA</p>
+          <p class="small text-muted">✉ Usa&#64;safevigsolutions.com</p>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+
+
+
+<!-- ======= REQUEST DEMO MODAL (CUSTOM) ======= -->
+<section class="micc-demo-modal">
+  <!-- Backdrop -->
+  <section class="modal-backdrop" *ngIf="showModal()" (click)="closeModal()" aria-hidden="true"></section>
+
+  <!-- Sheet -->
+  <section class="modal-sheet" *ngIf="showModal()" role="dialog" aria-modal="true"
+           aria-labelledby="demoTitle" aria-describedby="demoDesc">
+
+    <section class="modal-card" (click)="$event.stopPropagation()">
+      <!-- Header -->
+      <header class="modal-head">
+        <section class="modal-title-wrap">
+          <h4 id="demoTitle" class="modal-title">SafeVig MICC — Request a Demo</h4>
+          <p class="modal-subtitle">See how our Medical Information Contact Center fits your safety operations.</p>
+        </section>
+        <button type="button" class="icon-btn" (click)="closeModal()" aria-label="Close">
+          &times;
+        </button>
+      </header>
+
+      <!-- Body -->
+      <section id="demoDesc" class="modal-body">
+        <section class="modal-grid">
+          <!-- Left: value props -->
+          <section class="modal-left">
+            <h5 class="mb-3">Why request a demo?</h5>
+            <ul class="benefit-list">
+              <li>See omnichannel MICC workflows in action.</li>
+              <li>Understand GxP / GDPR alignment for your products.</li>
+              <li>Review dashboards, SLAs, and reconciliation views.</li>
+              <li>Discuss languages, regions, and integration options.</li>
+            </ul>
+
+            <section class="mini-facts">
+              <section class="fact">
+                <span class="fact-num">24/7</span>
+                <span class="fact-text">Global coverage</span>
+              </section>
+              <section class="fact">
+                <span class="fact-num">40+</span>
+                <span class="fact-text">Languages</span>
+              </section>
+              <section class="fact">
+                <span class="fact-num">100%</span>
+                <span class="fact-text">Audit-ready</span>
+              </section>
+            </section>
+          </section>
+
+          <!-- Right: form -->
+          <section class="modal-right">
+            <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+              <section class="grid-2">
+                <section class="form-row">
+                  <label>Name</label>
+                  <input type="text" formControlName="name" class="form-control" placeholder="Your name" />
+                  <small class="err" *ngIf="hasError('name','required')">Name is required.</small>
+                  <small class="err" *ngIf="hasError('name','minlength')">Minimum 2 characters.</small>
+                </section>
+
+                <section class="form-row">
+                  <label>Work Email</label>
+                  <input type="email" formControlName="email" class="form-control" placeholder="you@company.com" />
+                  <small class="err" *ngIf="hasError('email','required')">Email is required.</small>
+                  <small class="err" *ngIf="hasError('email','email')">Enter a valid email.</small>
+                </section>
+
+                <section class="form-row">
+                  <label>Phone</label>
+                  <input type="tel" formControlName="phone" class="form-control" placeholder="+91 / +1" />
+                </section>
+
+                <section class="form-row">
+                  <label>Company</label>
+                  <input type="text" formControlName="company" class="form-control" placeholder="Organization" />
+                </section>
+
+                <section class="form-row span-2">
+                  <label>Message</label>
+                  <textarea rows="3" formControlName="message" class="form-control"
+                            placeholder="Tell us about your MICC / PV needs"></textarea>
+                </section>
+              </section>
+
+              <section class="alert alert-success mt-2" *ngIf="sent()">Thanks! We’ll get back to you shortly.</section>
+              <section class="alert alert-danger mt-2" *ngIf="error()">{{ error() }}</section>
+            </form>
+          </section>
+        </section>
+      </section>
+
+      <!-- Footer -->
+      <footer class="modal-foot">
+        <section class="pill-list">
+          <span class="pill">24/7 Global Coverage</span>
+          <span class="pill">Multilingual Expertise</span>
+          <span class="pill">Regulatory Alignment</span>
+          <span class="pill">GxP-Compliant Infrastructure</span>
+        </section>
+        <section class="foot-actions">
+          <button type="button" class="btn btn-outline me-2" (click)="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="loading()" (click)="submit()">
+            <span class="spinner-border spinner-border-sm me-2" *ngIf="loading()"></span>
+            Send
+          </button>
+        </section>
+      </footer>
+    </section>
+  </section>
+</section>
